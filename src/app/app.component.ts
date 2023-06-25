@@ -12,26 +12,31 @@ export class AppComponent {
   jiraiyaSnap!: FaceSnap;
 
   ngOnInit(): void {
-    this.narutoSnap = new FaceSnap(
-      'Naruto',
-      "Somebody told me I'm a failure, I'll prove them wrong.",
-      new Date(),
-      8,
-      'https://static.vecteezy.com/ti/vecteur-libre/p3/14845288-illustration-de-personnage-naruto-iconele-style-cartoon-plat-gratuit-vectoriel.jpg'
-    );
-    this.sasukeSnap = new FaceSnap(
-      'Sasuke',
-      "I Hate A Lot Of Things, And I Don't Particularly Like Anything.",
-      new Date(),
-      7,
-      'https://pbs.twimg.com/media/EMhhX83UcAA47No.jpg'
-    );
-    this.jiraiyaSnap = new FaceSnap(
-      'Jiraiya',
-      "Once you've been hurt you learn to hate. But if you hurt another you become hated.",
-      new Date(),
-      69,
-      'https://www.pngmart.com/files/13/Jiraiya-PNG-Pic.png'
-    );
+    this.narutoSnap = {
+      title: 'Naruto',
+      description: "Somebody told me I'm a failure, I'll prove them wrong.",
+      createdDate: new Date(),
+      snaps: 8,
+      imageUrl:
+        'https://static.vecteezy.com/ti/vecteur-libre/p3/14845288-illustration-de-personnage-naruto-iconele-style-cartoon-plat-gratuit-vectoriel.jpg',
+      location: 'Konoha',
+    };
+    this.sasukeSnap = {
+      title: 'Sasuke',
+      description:
+        "I Hate A Lot Of Things, And I Don't Particularly Like Anything.",
+      createdDate: new Date(),
+      snaps: 7,
+      imageUrl: 'https://pbs.twimg.com/media/EMhhX83UcAA47No.jpg',
+    };
+    this.jiraiyaSnap = {
+      title: 'Jiraiya',
+      description:
+        "Once you've been hurt you learn to hate. But if you hurt another you become hated.",
+      createdDate: new Date(),
+      snaps: 69,
+      imageUrl: 'https://www.pngmart.com/files/13/Jiraiya-PNG-Pic.png',
+      location: 'Hot springs',
+    };
   }
 }

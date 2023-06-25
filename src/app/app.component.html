@@ -1,5 +1,13 @@
 <div class="container">
-    <app-face-snap [faceSnap]="narutoSnap"></app-face-snap>
-    <app-face-snap [faceSnap]="sasukeSnap"></app-face-snap>
-    <app-face-snap [faceSnap]="jiraiyaSnap"></app-face-snap>
+    <div class="card__wrap--outer">
+        <div class="card__wrap--inner">
+            <app-face-snap [faceSnap]="narutoSnap" class="card"></app-face-snap>
+        </div>
+        <div class="card__wrap--inner">
+            <app-face-snap [faceSnap]="sasukeSnap" class="card"></app-face-snap>
+        </div>
+        <div class="card__wrap--inner">
+            <app-face-snap [faceSnap]="jiraiyaSnap" class="card"></app-face-snap>
+        </div>
+    </div>
 </div>
