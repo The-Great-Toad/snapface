@@ -24,9 +24,18 @@
     outline: none;
     font-size: 14px;
     font-weight: 500;
+    cursor: pointer;
     &:active {
       transform: translate(1px, 1px);
       box-shadow: lightgray 0 0 5px;
     }
+    &:hover {
+      background-color: rgb(238, 238, 224);
+    }
   }
+}
+.snapped {
+  background-color: green !important;
+  color: #fff;
+  border-radius: 5px;
 }

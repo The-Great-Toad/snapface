@@ -7,7 +7,7 @@
     </p>
     <p class="flexible"><q>{{ faceSnap.description }}</q></p>
     <p>
-        <button (click)="onSnap()">
+        <button (click)="onSnap()" [ngClass]="{snapped: hasSnapped}">
             {{ hasSnapped ? 'Oops, unSnap!' : 'Oh Snap!'}}
         </button>
         <span [ngStyle]="{color: 'rgb(0,'+ faceSnap.snaps +',0)'}">👍 {{ faceSnap.snaps }}</span>
