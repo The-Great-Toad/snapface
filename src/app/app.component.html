@@ -1,7 +1,1 @@
-<div class="container">
-    <div class="card__wrap--outer">
-        <div *ngFor="let faceSnap of faceSnaps" class="card__wrap--inner">
-            <app-face-snap [faceSnap]="faceSnap" class="card"></app-face-snap>
-        </div>
-    </div>
-</div>
+<app-face-snap *ngFor="let faceSnap of faceSnaps" [faceSnap]="faceSnap"></app-face-snap>
