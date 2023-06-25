@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { FaceSnap } from '../models/face-snape.model';
 
 @Component({
   selector: 'app-face-snap',
@@ -6,28 +7,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./face-snap.component.scss'],
 })
 export class FaceSnapComponent implements OnInit {
-  title!: string;
-  description!: string;
-  createdDate!: Date;
-  snaps!: number;
-  imageUrl!: string;
+  @Input() faceSnap!: FaceSnap;
   hasSnapped: boolean = false;
 
-  ngOnInit(): void {
-    this.title = 'Naruto';
-    this.description = 'You better believe it!';
-    this.createdDate = new Date();
-    this.snaps = 8;
-    this.imageUrl =
-      'https://static.vecteezy.com/ti/vecteur-libre/p3/14845288-illustration-de-personnage-naruto-iconele-style-cartoon-plat-gratuit-vectoriel.jpg';
-  }
+  ngOnInit(): void {}
 
   onSnap() {
     if (!this.hasSnapped) {
       this.hasSnapped = true;
-      this.snaps++;
+      this.faceSnap.snaps++;
     } else {
-      this.snaps--;
+      this.faceSnap.snaps--;
       this.hasSnapped = false;
     }
   }
