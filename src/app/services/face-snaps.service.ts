@@ -7,6 +7,7 @@ import { FaceSnap } from '../models/face-snape.model';
 export class FaceSnapsService {
   faceSnaps: FaceSnap[] = [
     {
+      id: 1,
       title: 'Naruto',
       description: "Somebody told me I'm a failure, I'll prove them wrong.",
       createdDate: new Date(),
@@ -16,6 +17,7 @@ export class FaceSnapsService {
       location: 'Konoha',
     },
     {
+      id: 2,
       title: 'Sasuke',
       description:
         "I Hate A Lot Of Things, And I Don't Particularly Like Anything.",
@@ -24,6 +26,7 @@ export class FaceSnapsService {
       imageUrl: 'https://pbs.twimg.com/media/EMhhX83UcAA47No.jpg',
     },
     {
+      id: 3,
       title: 'Jiraiya',
       description:
         "Once you've been hurt you learn to hate. But if you hurt another you become hated.",
@@ -33,4 +36,25 @@ export class FaceSnapsService {
       location: 'Hot springs',
     },
   ];
+
+  getAllFaceSnaps(): FaceSnap[] {
+    return this.faceSnaps;
+  }
+
+  getFaceSnapById(faceSnapId: number): FaceSnap {
+    const faceSnap = this.faceSnaps.find(
+      (faceSnap) => faceSnap.id === faceSnapId
+    );
+
+    if (!faceSnap) {
+      throw new Error('FaceSnap not found!');
+    } else {
+      return faceSnap;
+    }
+  }
+
+  snapFaceSnapById(faceSnapId: number, snapType: 'snap' | 'unsnap'): void {
+    const faceSnap: FaceSnap = this.getFaceSnapById(faceSnapId);
+    snapType === 'snap' ? faceSnap.snaps++ : faceSnap.snaps--;
+  }
 }
